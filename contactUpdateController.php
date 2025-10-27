@@ -13,10 +13,13 @@
         $contactDAO = new ContactDAO();
         
         
-       $contact = $contactDAO->updateContact($contactID);
+       $contact = $contactDAO->getContactByID($contactID);
+
+       $username = $contact->username;
+       $email = $contact->email;
 
         include "views/contactUpdate-view.php";
-        exit;
+        
 
 
     }

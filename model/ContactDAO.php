@@ -35,7 +35,7 @@
             $connection->close();
             return $contacts;
         }
-        
+
         public function updateContact($contact){
             $connection=$this->getConnection();
             $stmt = $connection->prepare(" UPDATE contacts SET username = ?, email = ? WHERE contactID = ?");
@@ -51,6 +51,21 @@
             $stmt->execute();
             $stmt->close();
             $connection->close();
+        }
+
+        public function getContactByID($contactID){
+            $connection=$this->getConnection();
+            $stmt = $connection->prepare("SELECT * FROM contacts WHERE contactID = ?;"); 
+            $stmt->bind_param("i", $contactID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            $stmt->close();
+            $connection->close();
+
+            $newContact = new Contact();
+            $newContact ->load($row);
+            return $newContact;
         }
         
 
