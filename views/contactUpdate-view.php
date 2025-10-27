@@ -1,44 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSCE 20303 | Add Contact</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
-    <nav class="navbar bg-body-tertiary mb-5">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-            <img src="images/logo.png" height="40%" width="40%" alt="UAFS">
-            </a>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Mailing List</h5>
-                        <p class="card-text">Update Contact</p>
-                        <form action="contactUpdateController.php" method="POST">
-                            <input type = "hidden" name="contactID" value ="<?php echo $contactID; ?>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Contact</title>
+</head>
+<body>
+     <form method = "POST" action="contactUpdateController.php">
+        <input type="hidden"  name ="contactID" value= "<?php echo $contactID; ?>">
 
-                            <label for="username" class="form-label">Username</label>
-                            <input type="hidden" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required value="<?php echo $contact->username;?>">
+        <label>Username</label><br>
+        <input name="username" required value="<?php echo $username; ?>"><br><br>
 
-                            <label for="email" class="form-label">Email</label>
-                            <input type="hidden" class="form-control mb-3" id="email" name="email" placeholder="Enter your Email Address" required value ="<?php echo $contact->email; ?>">
+        <label>Email</label><br>
+        <input name = "email" required value = "<?php echo $email; ?>"><br><br>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href = "contactListController.php" class ="btn btn-secondary">Cancel</a>
-                        </form>
-                    </div>
-                </div>      
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+        <button type = "submit" class = "btn btn-primary">Save</button>
+         <a href="contactListController.php" class="btn btn secondary">Cancel</a>
+  
+        </form>
+</body>
 </html>

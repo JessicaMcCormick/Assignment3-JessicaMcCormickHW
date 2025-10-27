@@ -11,9 +11,12 @@
     if($method=='GET'){
         $contactID = $_GET['contactID'];
         $contactDAO = new ContactDAO();
-       //$contact = $contactDAO->updateContact($contactID);
+        
+        
+       $contact = $contactDAO->updateContact($contactID);
 
         include "views/contactUpdate-view.php";
+        exit;
 
 
     }
