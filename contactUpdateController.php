@@ -21,8 +21,14 @@
     //* Process HTTP POST Request
     if($method=='POST'){
         $contactID = $_POST['contactID'];
+        
+        $newContact = new Contact();
+        $newContact -> contactID = $contactID;
+        $newContact -> username = $username;
+        $newContact -> email = $email;
+
         $contactDAO = new ContactDAO();
-        $contact = $contactDAO->updateContact($contactID);
+        $contact = $contactDAO->updateContact($newContact);
         header("Location: contactListController.php");
         exit;
 
