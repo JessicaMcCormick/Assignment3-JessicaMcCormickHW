@@ -11,7 +11,7 @@
     if($method=='GET'){
         $contactID = $_GET['contactID'];
         $contactDAO = new ContactDAO();
-        $contact = $contactDAO->getContact($contactID);
+        $contact = $contactDAO->updateContact($contactID);
 
         include "views/contactUpdate-view.php";
 
@@ -20,6 +20,12 @@
     
     //* Process HTTP POST Request
     if($method=='POST'){
+        $contactID = $_POST['contactID'];
+        $contactDAO = new ContactDAO();
+        $contact = $contactDAO->updateContact($contactID);
+        header("Location: contactListController.php");
+        exit;
+
 
     }
    

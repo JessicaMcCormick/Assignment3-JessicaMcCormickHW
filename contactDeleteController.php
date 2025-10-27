@@ -10,15 +10,20 @@
     //* Process HTTP GET Request
     if($method=='GET'){
         $contactID = $_GET['contactID'];
-        $contactDAO = new ContactDA();
+        $contactDAO = new ContactDAO();
         $contactDAO -> deleteContact($contactID);
-        header("Locatoin: contactListController.php");
+        include "views/contactsDelete-view.php";
         exit;
 
     }
     
     //* Process HTTP POST Request
     if($method=='POST'){
+        $contactID = $_POST['contactID'];
+        $contactDAO = new ContactDAO();
+        $contactDAO -> deleteContact($contactID);
+        header("Location: contactListController.php");
+        exit;
         
 
     }
