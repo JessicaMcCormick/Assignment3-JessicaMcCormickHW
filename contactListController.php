@@ -4,7 +4,7 @@
     //************************
     //*  Contoller Template  *
     //************************
-    showErrors(0);  //1 - Turn on Error Display
+    showErrors(1);  //1 - Turn on Error Display
 
 
     $method=$_SERVER['REQUEST_METHOD'];

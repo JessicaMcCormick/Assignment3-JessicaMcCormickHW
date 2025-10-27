@@ -9,9 +9,9 @@
     $method=$_SERVER['REQUEST_METHOD'];
     //* Process HTTP GET Request
     if($method=='GET'){
-        $contactID = $_GET['contactID'];
-        $contactDAO = new ContactDAO();
-        $contact = $contactDAO->updateContact($contactID);
+        //$contactID = $_GET['contactID'];
+        //$contactDAO = new ContactDAO();
+       //$contact = $contactDAO->updateContact($contactID);
 
         include "views/contactUpdate-view.php";
 
