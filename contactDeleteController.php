@@ -9,8 +9,8 @@
     $method=$_SERVER['REQUEST_METHOD'];
     //* Process HTTP GET Request
     if($method=='GET'){
-        //$contactID = $_GET['contactID'];
-        //$contactDAO = new ContactDAO();
+        $contactID = $_GET['contactID'];
+        $contactDAO = new ContactDAO();
         //$contactDAO -> deleteContact($contactID);
         include "views/contactDelete-view.php";
         exit;

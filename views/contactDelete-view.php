@@ -10,10 +10,12 @@
     
     <form method = "POST" action="contactDeleteController.php">
         <input type = "hidden" name = "contactID"
-            
-            >
+        value="<?php echo $contactID; ?> ">
+           
         <button type = "submit">Confirm</button>
-        <a href="contactListController.php">Cancel</a>
+
+        <a href="contactListController.php" class = "btn btn-secondary">Cancel</a>
+    
     </form>
 </body>
 </html>

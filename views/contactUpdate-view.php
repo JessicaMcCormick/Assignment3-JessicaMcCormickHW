@@ -20,13 +20,18 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Mailing List</h5>
-                        <p class="card-text">Add a new contact to the list.</p>
+                        <p class="card-text">Update Contact</p>
                         <form action="contactUpdateController.php" method="POST">
+                            <input type = "hidden" name="contactID" value ="<?php echo $contactID; ?>">
+
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required>
+                            <input type="hidden" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required value="<?php echo $contact->username;?>">
+
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control mb-3" id="email" name="email" placeholder="Enter your Email Address" required>
+                            <input type="hidden" class="form-control mb-3" id="email" name="email" placeholder="Enter your Email Address" required value ="<?php echo $contact->email; ?>">
+
                             <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href = "contactListController.php" class ="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>      
