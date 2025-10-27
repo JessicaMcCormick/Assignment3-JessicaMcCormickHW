@@ -45,7 +45,7 @@
         }
         public function updateContact($contact){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("UPDATE contacts SET username=?, email = ? WHERE contactID =?");
+            $stmt = $connection->prepare(" UPDATE contacts SET username = ?, email = ? WHERE contactID = ?");
             $stmt->bind_param("ssi", $contact->username, $contact->email, $contact->contactID);
             $stmt->execute();
             $stmt->close();
